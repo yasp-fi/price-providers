@@ -1,9 +1,9 @@
 {
-  "name": "@yasp/package-template",
+  "name": "@yasp/price-providers",
   "version": "0.0.1",
   "description": "TS package template",
-  "main": "dist/yasp-package-template.cjs.js",
-  "types": "dist/yasp-package-template.d.ts",
+  "main": "dist/yasp-price-providers.cjs.js",
+  "types": "dist/yasp-price-providers.d.ts",
   "scripts": {
     "build": "npm run clean && NODE_ENV=production rollup -c",
     "build:watch": "NODE_ENV=development rollup -c -w",
@@ -28,12 +28,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yasp-finance/package-template.git"
+    "url": "https://github.com/yasp-finance/price-providers.git"
   },
   "bugs": {
-    "url": "https://github.com/yasp-finance/package-template/issues"
+    "url": "https://github.com/yasp-finance/price-providers/issues"
   },
-  "homepage": "https://github.com/yasp-finance/package-template#readme",
+  "homepage": "https://github.com/yasp-finance/price-providers#readme",
   "devDependencies": {
     "@commitlint/cli": "16.3.0",
     "@commitlint/config-conventional": "16.2.4",

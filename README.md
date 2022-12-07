@@ -1,7 +1,4 @@
 
-# !! Search package.json by "package-template" and replace with your package's name.
-# Set NPM_TOKEN and GH_TOKEN secrets for you repo in Github to make releasing works
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
