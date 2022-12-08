@@ -16,7 +16,7 @@ import {
 } from './types'
 import { v4 } from 'uuid'
 import pLimit from 'p-limit'
-import { chunk, has } from 'lodash'
+import { chunk } from 'lodash'
 import {
   fulfilledPromiseValueSelector,
   isFulfilled,
@@ -31,10 +31,6 @@ export type JupiterProviderProps = {
 }
 
 export class JupiterProvider implements PriceProvider {
-  cachedPriceQuotes: Record<string, PriceQuote> = {}
-  priceQuotesUpdatedAt = 0
-  priceQuotesUpdateInterval = ms('1m')
-
   chain: SupportedChains
   assetsSupported: Asset[]
   providerSlug: ProviderSlug
@@ -49,32 +45,13 @@ export class JupiterProvider implements PriceProvider {
     return createSafeWretch(JUPITER_PRICE_API_URL)
   }
 
-  _resetIntervals() {
-    this.priceQuotesUpdatedAt = 0
+  _chunkList(addressOrSymbolList: string[]): string[][] {
+    return chunk(addressOrSymbolList, 10)
   }
 
-  _shouldRefreshPriceQuotes(): boolean {
-    const date = Date.now()
-
-    if (!this.priceQuotesUpdatedAt) {
-      return true
-    }
-
-    return (
-      Math.abs(this.priceQuotesUpdatedAt - date) >
-      this.priceQuotesUpdateInterval
-    )
-  }
-
-  _priceResponseDataToTicker(responseData: PriceResponseData): PriceQuote {
-    if (isErrorResponseJupiter(responseData)) {
-      throw new Error('Response error')
-    }
-
-    if (!isPriceResponseData(responseData)) {
-      throw new Error(`Invalid pricing response data schema`)
-    }
-
+  _priceResponseDataToTicker = (
+    responseData: PriceResponseData
+  ): PriceQuote => {
     const priceQuoteProperties: PriceQuoteProperties = {
       id: v4().toString(),
       value: responseData.price.toString(),
@@ -83,72 +60,8 @@ export class JupiterProvider implements PriceProvider {
       providerSlug: this.providerSlug,
       priceQuoteType: 'crypto',
     }
+
     return new PriceQuote(priceQuoteProperties)
-  }
-
-  async _updateCacheByList(
-    list: string[],
-    castToLowercase = false
-  ): Promise<void> {
-    if (!this._shouldRefreshPriceQuotes() || list.length === 0) {
-      return
-    }
-
-    const asyncLimit = pLimit(1)
-    const chunks = chunk(list, 10)
-    const promises: Promise<PriceResponseData[]>[] = []
-
-    for (const chunk of chunks) {
-      const id = chunk
-        .map((symbol) => (castToLowercase ? symbol.toLowerCase() : symbol))
-        .join(',')
-
-      promises.push(
-        asyncLimit(async () => {
-          const response = await this.requester
-            .query({ id })
-            .get()
-            .json<MultipleTokensResponse>()
-
-          if (isErrorResponseJupiter(response)) {
-            return Promise.reject(new Error(`Failed to get quote`))
-          }
-
-          return response.data.filter(
-            (priceResponseData) =>
-              isPriceResponseData(priceResponseData) && priceResponseData.price
-          )
-        })
-      )
-    }
-
-    const settledFeedsPromises = await Promise.allSettled(promises)
-
-    const successFeeds = settledFeedsPromises
-      .filter(isFulfilled)
-      .map(fulfilledPromiseValueSelector)
-      .flat(1)
-    const failedFeeds = settledFeedsPromises
-      .filter(isRejected)
-      .map(rejectedPromiseReasonSelector)
-
-    if (failedFeeds.length > 0) {
-      console.warn(
-        `Failed feeds promises. Count: ${failedFeeds.length} >`,
-        failedFeeds
-      )
-    }
-
-    for (const quote of successFeeds) {
-      if (isErrorResponseJupiter(quote)) {
-        continue
-      }
-
-      const ticker = this._priceResponseDataToTicker(quote)
-      this.cachedPriceQuotes[ticker.symbol] = ticker
-    }
-
-    this.priceQuotesUpdatedAt = Date.now()
   }
 
   async forPriceByAddress(address: string): Promise<PriceQuote> {
@@ -161,7 +74,9 @@ export class JupiterProvider implements PriceProvider {
       throw new Error()
     }
 
-    return this._priceResponseDataToTicker(response.data)
+    const { data: priceResponseData } = response
+
+    return this._priceResponseDataToTicker(priceResponseData)
   }
 
   async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
@@ -174,16 +89,108 @@ export class JupiterProvider implements PriceProvider {
       throw new Error()
     }
 
-    return this._priceResponseDataToTicker(response.data)
+    const { data: priceResponse } = response
+
+    return this._priceResponseDataToTicker(priceResponse)
   }
 
   async forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {
-    await this._updateCacheByList(addressList)
-    return Object.values(this.cachedPriceQuotes)
+    const chunkList = this._chunkList(addressList)
+    const priceQuotesPromises: Promise<PriceResponseData[]>[] = []
+    const promiseLimit = pLimit(1)
+
+    for (const chunk of chunkList) {
+      const commaSeparatedIds = chunk.join(',')
+
+      priceQuotesPromises.push(
+        promiseLimit(async (): Promise<PriceResponseData[]> => {
+          const multipleTokensResponse = await this.requester
+            .query({ id: commaSeparatedIds })
+            .get()
+            .json<MultipleTokensResponse>()
+
+          if (isErrorResponseJupiter(multipleTokensResponse)) {
+            return Promise.reject(new Error('Failed to get quote'))
+          }
+
+          const { data: priceResponseData } = multipleTokensResponse
+
+          return priceResponseData.filter(
+            (priceResponseData) =>
+              isPriceResponseData(priceResponseData) && priceResponseData.price
+          )
+        })
+      )
+    }
+
+    const settledPriceQuotes = await Promise.allSettled(priceQuotesPromises)
+
+    const priceQuotes = settledPriceQuotes
+      .filter(isFulfilled)
+      .map(fulfilledPromiseValueSelector)
+      .flat(1)
+      .map(this._priceResponseDataToTicker)
+
+    const rejectedPriceQuotes = settledPriceQuotes
+      .filter(isRejected)
+      .map(rejectedPromiseReasonSelector)
+
+    if (rejectedPriceQuotes.length > 0) {
+      console.warn(`Failed to fetch ${rejectedPriceQuotes.length} quotes.`)
+    }
+
+    return priceQuotes
   }
 
   async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
-    await this._updateCacheByList(tickerSymbols, true)
-    return Object.values(this.cachedPriceQuotes)
+    const chunkList = this._chunkList(tickerSymbols)
+    const priceQuotesPromises: Promise<PriceQuote[]>[] = []
+    const promiseLimit = pLimit(1)
+
+    for (const chunk of chunkList) {
+      const commaSeparatedLowercaseSymbols = chunk
+        .map((tickerSymbol) => tickerSymbol.toLowerCase())
+        .join(',')
+
+      priceQuotesPromises.push(
+        promiseLimit(async (): Promise<PriceQuote[]> => {
+          const multipleTokensResponse = await this.requester
+            .query({ id: commaSeparatedLowercaseSymbols })
+            .get()
+            .json<MultipleTokensResponse>()
+
+          if (isErrorResponseJupiter(multipleTokensResponse)) {
+            return Promise.reject(new Error('Failed to get quote'))
+          }
+
+          const { data: priceResponseData } = multipleTokensResponse
+
+          return priceResponseData
+            .filter(
+              (priceResponseData) =>
+                isPriceResponseData(priceResponseData) &&
+                priceResponseData.price
+            )
+            .map(this._priceResponseDataToTicker)
+        })
+      )
+    }
+
+    const settledPriceQuotes = await Promise.allSettled(priceQuotesPromises)
+
+    const priceQuotes = settledPriceQuotes
+      .filter(isFulfilled)
+      .map(fulfilledPromiseValueSelector)
+      .flat(1)
+
+    const rejectedPriceQuotes = settledPriceQuotes
+      .filter(isRejected)
+      .map(rejectedPromiseReasonSelector)
+
+    if (rejectedPriceQuotes.length > 0) {
+      console.warn(`Failed to fetch ${rejectedPriceQuotes.length} quotes.`)
+    }
+
+    return priceQuotes
   }
 }
