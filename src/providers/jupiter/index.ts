@@ -10,21 +10,20 @@ import ms from 'ms'
 import { createSafeWretch } from '@yasp/requests'
 import { JUPITER_PRICE_API_URL } from './constants'
 import {
-  ErrorResponse,
   MultipleTokensResponse,
   PriceResponseData,
   SingleTokenResponse,
 } from './types'
 import { v4 } from 'uuid'
 import pLimit from 'p-limit'
-import { chunk } from 'lodash'
+import { chunk, has } from 'lodash'
 import {
   fulfilledPromiseValueSelector,
   isFulfilled,
   isRejected,
   rejectedPromiseReasonSelector,
 } from '../../core/promise'
-import { isErrorResponseJupiter } from './utils'
+import { isErrorResponseJupiter, isPriceResponseData } from './utils'
 
 export type JupiterProviderProps = {
   chain: SupportedChains
@@ -69,7 +68,11 @@ export class JupiterProvider implements PriceProvider {
 
   _priceResponseDataToTicker(responseData: PriceResponseData): PriceQuote {
     if (isErrorResponseJupiter(responseData)) {
-      throw new Error('Response data is response error')
+      throw new Error('Response error')
+    }
+
+    if (!isPriceResponseData(responseData)) {
+      throw new Error(`Invalid pricing response data schema`)
     }
 
     const priceQuoteProperties: PriceQuoteProperties = {
@@ -91,7 +94,7 @@ export class JupiterProvider implements PriceProvider {
       return
     }
 
-    const asyncLimit = pLimit(2)
+    const asyncLimit = pLimit(1)
     const chunks = chunk(list, 10)
     const promises: Promise<PriceResponseData[]>[] = []
 
@@ -107,13 +110,14 @@ export class JupiterProvider implements PriceProvider {
             .get()
             .json<MultipleTokensResponse>()
 
-          console.info('Response ->', response)
-
           if (isErrorResponseJupiter(response)) {
             return Promise.reject(new Error(`Failed to get quote`))
           }
 
-          return response.data
+          return response.data.filter(
+            (priceResponseData) =>
+              isPriceResponseData(priceResponseData) && priceResponseData.price
+          )
         })
       )
     }

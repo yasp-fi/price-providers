@@ -3,15 +3,13 @@ export type ErrorResponse = {
   error: string
 }
 
-export type PriceResponseData =
-  | {
-      id: string
-      mintSymbol: string
-      vsToken: string
-      vsTokenSymbol: 'USDC'
-      price: number
-    }
-  | ErrorResponse
+export type PriceResponseData = {
+  id: string
+  mintSymbol: string
+  vsToken: string
+  vsTokenSymbol: 'USDC'
+  price: number
+}
 
 export type SingleTokenResponse =
   | {
