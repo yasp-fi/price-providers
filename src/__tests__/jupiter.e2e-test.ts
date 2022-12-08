@@ -50,6 +50,8 @@ describe('jupiter e2e testing', () => {
         addressList
       )
 
+      ctxJupiter._resetIntervals()
+
       for (const quote of priceQuotesByAddressList) {
         expect(PriceQuote.isPriceQuote(quote)).toBeTruthy()
       }
