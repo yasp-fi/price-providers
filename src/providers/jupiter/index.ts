@@ -141,7 +141,6 @@ export class JupiterProvider implements PriceProvider {
 
     for (const quote of successFeeds) {
       if (isErrorResponseJupiter(quote)) {
-        console.info(quote)
         continue
       }
 
