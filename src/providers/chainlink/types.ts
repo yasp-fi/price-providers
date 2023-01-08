@@ -1,4 +1,4 @@
 export type ChainlinkDataFeed = {
-	pair: string[]
-	address: string
+  pair: string[]
+  address: string
 }

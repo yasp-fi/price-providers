@@ -26,22 +26,22 @@ export class ChainlinkProvider implements PriceProvider {
     this.priceFeeds = CHAINLINK_FEEDS_BY_CHAIN[this.chainId]
     this.chainlinkContract = new Chainlink(props.chainId)
   }
-	forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {
-		throw new Error('Method not implemented.')
-	}
-	forPriceByAddress(addressList: string[]): Promise<PriceQuote[]> {
-		throw new Error('Method not implemented.')
-	}
 
-	#forTickerSymbol(feedAddress: string): string {
-		const feed = this.priceFeeds.find(f => f.address === feedAddress);
+  forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {
+    throw new Error('Method not implemented.')
+  }
+
+  forPriceByAddress(address: string): Promise<PriceQuote> {
+    throw new Error('Method not implemented.')
+  }
+
+  #forTickerSymbol(feedAddress: string): string {
+    const feed = this.priceFeeds.find((f) => f.address === feedAddress)
     if (!feed) {
-      throw new Error(
-        `Chainlink ${feedAddress} feed doesn't exists`
-      )
+      throw new Error(`Chainlink ${feedAddress} feed doesn't exists`)
     }
-		return feed.pair[0]
-	}
+    return feed.pair[0]
+  }
 
   async forPricesBySymbols(
     tickerSymbols: string[],
@@ -75,10 +75,10 @@ export class ChainlinkProvider implements PriceProvider {
     }
     const [data] = await this.chainlinkContract.latestRoundData([feed.address])
     return convertChainlinkQuoteToPriceQuote(
-			data,
-			tickerSymbol,
-			quoteSymbol,
-			this.providerSlug
-		)
+      data,
+      tickerSymbol,
+      quoteSymbol,
+      this.providerSlug
+    )
   }
 }
