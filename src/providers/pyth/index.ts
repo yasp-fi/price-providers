@@ -190,6 +190,13 @@ export class PythProvider implements PriceProvider {
     return this.cachedPriceQuotes
   }
 
+  forAllQuotes(): Promise<PriceQuote[]> {
+    return this.forPricesByAddressList(
+      this.assetsSupported.map(asset => asset.onChainAddress)
+    )
+  }
+
+
   async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()
 

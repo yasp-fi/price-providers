@@ -1,4 +1,4 @@
-import { PriceQuote, ProviderSlug, SupportedChains } from '@yasp/models'
+import { Asset, PriceQuote, ProviderSlug, SupportedChains } from '@yasp/models'
 import { createSafeWretch } from '@yasp/requests'
 
 import { UniswapTokenQueryResponse } from './types'
@@ -9,16 +9,21 @@ import { v4 } from 'uuid'
 import { AssetAmount } from '@yasp/asset-amount'
 import ms from 'ms'
 
-export type TheGraphProviderProps = {}
+export type TheGraphProviderProps = {
+  assetsSupported: Asset[]
+}
 
 export class TheGraphProvider implements PriceProvider {
   chain = SupportedChains.Ethereum
   providerSlug = `thegraph-ETH` as ProviderSlug
   cachedQuotes: PriceQuote[] = []
+  assetsSupported: Asset[]
   cacheTTL = ms('15s')
   lastUpdateAt = 0
 
-  constructor(props: TheGraphProviderProps) {}
+  constructor(props: TheGraphProviderProps) {
+    this.assetsSupported = props.assetsSupported
+  }
 
   get requester() {
     return createSafeWretch(THE_GRAPH_QUERY_API)
@@ -59,6 +64,10 @@ export class TheGraphProvider implements PriceProvider {
       this.lastUpdateAt = Date.now()
     }
     return this.cachedQuotes
+  }
+
+  async forAllQuotes(): Promise<PriceQuote[]> {
+    return await this.fetchUniswapQuotes()
   }
 
   async forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {

@@ -1,4 +1,4 @@
-import { ChainIds, PriceQuote, ProviderSlug, SupportedChains } from '@yasp/models'
+import { Asset, ChainIds, PriceQuote, ProviderSlug, SupportedChains } from '@yasp/models'
 import ms from 'ms'
 import { CHAINLINK_FEEDS_BY_CHAIN } from './constants'
 import { PriceProvider } from '../../core/provider'
@@ -19,6 +19,7 @@ export class ChainlinkProvider implements PriceProvider {
   priceFeeds: ChainlinkDataFeed[]
   chainlinkContract: Chainlink
 	quoteSymbol: string
+  assetsSupported: Asset[] = []
 
   cachedPriceQuotes: Record<string, PriceQuote> = {}
   priceQuotesUpdatedAt = 0
@@ -31,6 +32,12 @@ export class ChainlinkProvider implements PriceProvider {
     this.priceFeeds = CHAINLINK_FEEDS_BY_CHAIN[this.chainId]
     this.chainlinkContract = new Chainlink(props.chainId)
 		this.quoteSymbol = props.quoteSymbol || 'USD'
+  }
+  
+  forAllQuotes(): Promise<PriceQuote[]> {
+    return this.forPricesBySymbols(
+      this.assetsSupported.map(asset => asset.symbol)
+    )
   }
 
   forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {

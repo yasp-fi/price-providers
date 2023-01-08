@@ -63,6 +63,12 @@ export class JupiterProvider implements PriceProvider {
     return new PriceQuote(priceQuoteProperties)
   }
 
+  forAllQuotes(): Promise<PriceQuote[]> {
+    return this.forPricesByAddressList(
+      this.assetsSupported.map(asset => asset.onChainAddress)
+    )
+  }
+
   async forPriceByAddress(address: string): Promise<PriceQuote> {
     const response = await this.requester
       .query({ id: address })

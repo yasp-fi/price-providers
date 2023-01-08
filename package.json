@@ -1,6 +1,6 @@
 {
   "name": "@yasp/price-providers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TS package template",
   "main": "dist/yasp-price-providers.cjs.js",
   "types": "dist/yasp-price-providers.d.ts",
