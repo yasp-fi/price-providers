@@ -38,7 +38,7 @@ export class PythProvider implements PriceProvider {
 
   constructor(props: PythProviderProps) {
     this.chain = props.chain
-    this.providerSlug = `pyth-${this.chain}`
+    this.providerSlug = `pyth-${this.chain}` as ProviderSlug
     this.assetsSupported = props.assetsSupported
     this.pythContractAddress = PYTH_ADDRESSES_BY_CHAIN[this.chain]
   }
@@ -71,7 +71,7 @@ export class PythProvider implements PriceProvider {
     const value = parseInt(notFormattedPrice) / 10 ** Math.abs(expo)
     const asset = this._symbolToAsset(priceFeed.assetSymbol)
     const symbol = asset?.symbol ?? priceFeed.assetSymbol
-    const contractAddress = asset?.contractAddress
+    const contractAddress = asset?.onChainAddress
 
     return new PriceQuote({
       id: v4().toString(),

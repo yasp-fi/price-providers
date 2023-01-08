@@ -1,6 +1,5 @@
-import { AbiItem } from '@yasp/evm-lib'
 
-export const pythABI: AbiItem[] = [
+export const pythABI: any[] = [
   {
     anonymous: false,
     inputs: [

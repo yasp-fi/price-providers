@@ -1,6 +1,6 @@
 {
   "name": "@yasp/price-providers",
-  "version": "0.0.1",
+  "version": "1.0.3",
   "description": "TS package template",
   "main": "dist/yasp-price-providers.cjs.js",
   "types": "dist/yasp-price-providers.d.ts",
@@ -84,8 +84,8 @@
   "author": "Danil Yasp",
   "license": "MIT",
   "dependencies": {
-    "@yasp/evm-lib": "^1.4.0",
-    "@yasp/models": "^1.21.0",
+    "@yasp/evm-lib": "^1.5.0",
+    "@yasp/models": "^1.23.0",
     "@yasp/requests": "^1.1.0",
     "lodash": "^4.17.21",
     "ms": "^2.1.3",

@@ -1,0 +1,41 @@
+{
+  "name": "price-providers",
+  "sourceRoot": "libs/price-providers/src",
+  "projectType": "library",
+  "generators": {},
+  "targets": {
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "configurations": {
+        "production": {
+          "sourceMap": false
+        }
+      },
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/price-providers",
+        "main": "libs/price-providers/src/index.ts",
+        "tsConfig": "libs/price-providers/tsconfig.json",
+        "project": "libs/price-providers/package.json",
+        "compiler": "tsc",
+        "updateBuildableProjectDepsInPackageJson": true,
+        "generateExportsField": true,
+        "format": ["cjs", "esm"],
+        "outputFileName": "dist/libs/price-providers/index.js",
+        "assets": []
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/price-providers/jest.config.ts"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
+    }
+  }
+}

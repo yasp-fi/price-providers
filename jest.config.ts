@@ -8,7 +8,7 @@ const config: Config.InitialOptions = {
   preset: 'ts-jest',
   globals: {
     'ts-jest': {
-      tsconfig: 'tsconfig.json',
+      tsconfig: './libs/price-providers/tsconfig.json',
     },
   },
   testMatch: ['**/?(*.)+(e2e-test|unit-test).ts'],

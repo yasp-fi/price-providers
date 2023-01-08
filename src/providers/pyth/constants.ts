@@ -1,14 +1,15 @@
 import { SupportedChains } from '@yasp/models'
 
 export const PYTH_ADDRESSES_BY_CHAIN: Record<SupportedChains, string> = {
-  [SupportedChains.Ethereum]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
-  [SupportedChains.BinanceSmartChain]:
-    '0x4D7E825f80bDf85e913E0DD2A2D54927e9dE1594',
-  [SupportedChains.Avalanche]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
-  [SupportedChains.Fantom]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
-  [SupportedChains.Matic]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
-  [SupportedChains.Arbitrum]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
-  [SupportedChains.Solana]: '',
+	[SupportedChains.Ethereum]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
+	[SupportedChains.BinanceSmartChain]: '0x4D7E825f80bDf85e913E0DD2A2D54927e9dE1594',
+	[SupportedChains.Avalanche]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
+	[SupportedChains.Fantom]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
+	[SupportedChains.Matic]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
+	[SupportedChains.Arbitrum]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
+	[SupportedChains.Solana]: '',
+	[SupportedChains.Optimism]: '',
+	[SupportedChains.ZkSync]: ''
 }
 
 export const PYTH_SYMBOLS_BY_PRICE_IDS = [
