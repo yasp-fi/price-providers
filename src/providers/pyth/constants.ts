@@ -1,15 +1,16 @@
 import { SupportedChains } from '@yasp/models'
 
 export const PYTH_ADDRESSES_BY_CHAIN: Record<SupportedChains, string> = {
-	[SupportedChains.Ethereum]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
-	[SupportedChains.BinanceSmartChain]: '0x4D7E825f80bDf85e913E0DD2A2D54927e9dE1594',
-	[SupportedChains.Avalanche]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
-	[SupportedChains.Fantom]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
-	[SupportedChains.Matic]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
-	[SupportedChains.Arbitrum]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
-	[SupportedChains.Solana]: '',
-	[SupportedChains.Optimism]: '',
-	[SupportedChains.ZkSync]: ''
+  [SupportedChains.Ethereum]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
+  [SupportedChains.BinanceSmartChain]:
+    '0x4D7E825f80bDf85e913E0DD2A2D54927e9dE1594',
+  [SupportedChains.Avalanche]: '0x4305FB66699C3B2702D4d05CF36551390A4c69C6',
+  [SupportedChains.Fantom]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
+  [SupportedChains.Matic]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
+  [SupportedChains.Arbitrum]: '0xff1a0f4744e8582DF1aE09D5611b887B6a12925C',
+  [SupportedChains.Solana]: '',
+  [SupportedChains.Optimism]: '',
+  [SupportedChains.ZkSync]: '',
 }
 
 export const PYTH_SYMBOLS_BY_PRICE_IDS = [
@@ -84,10 +85,6 @@ export const PYTH_SYMBOLS_BY_PRICE_IDS = [
   [
     'Crypto.AURORA/USD',
     '0x2f7c4f738d498585065a4b87b637069ec99474597da7f0ca349ba8ac3ba9cac5',
-  ],
-  [
-    'Crypto.AUST/UST',
-    '0x4cbd623d7aa47003fff1cd75c3f96cb24a660014b697d91cfb7adcd204b95202',
   ],
   [
     'Crypto.AUTO/USD',
@@ -692,42 +689,6 @@ export const PYTH_SYMBOLS_BY_PRICE_IDS = [
   [
     'FX.NZD/USD',
     '0x92eea8ba1b00078cdc2ef6f64f091f262e8c7d0576ee4677572f314ebfafa4c7',
-  ],
-  [
-    'FX.USD/CAD',
-    '0x3112b03a41c910ed446852aacf67118cb1bec67b2cd0b9a214c58cc0eaa2ecca',
-  ],
-  [
-    'FX.USD/CHF',
-    '0x0b1e3297e69f162877b577b0d6a47a0d63b2392bc8499e6540da4187a63e28f8',
-  ],
-  [
-    'FX.USD/CNH',
-    '0xeef52e09c878ad41f6a81803e3640fe04dceea727de894edd4ea117e2e332e66',
-  ],
-  [
-    'FX.USD/HKD',
-    '0x19d75fde7fee50fe67753fdc825e583594eb2f51ae84e114a5246c4ab23aff4c',
-  ],
-  [
-    'FX.USD/JPY',
-    '0xef2c98c804ba503c6a707e38be4dfbb16683775f195b091252bf24693042fd52',
-  ],
-  [
-    'FX.USD/MXN',
-    '0xe13b1c1ffb32f34e1be9545583f01ef385fde7f42ee66049d30570dc866b77ca',
-  ],
-  [
-    'FX.USD/RUB',
-    '0x2f6144bae52851efb91082911cb6b83f9d8d08cb6ace5625eaac26f638af710b',
-  ],
-  [
-    'FX.USD/SGD',
-    '0x396a969a9c1480fa15ed50bc59149e2c0075a72fe8f458ed941ddec48bdb4918',
-  ],
-  [
-    'FX.USD/ZAR',
-    '0x389d889017db82bf42141f23b61b8de938a4e2d156e36312175bebf797f493f1',
   ],
   [
     'Metal.XAG/USD',

@@ -190,6 +190,38 @@ export class PythProvider implements PriceProvider {
     return this.cachedPriceQuotes
   }
 
+  async forPriceBySymbol(
+    tickerSymbol: string,
+    quoteSymbol = 'USD'
+  ): Promise<PriceQuote> {
+    if (quoteSymbol !== 'USD') {
+      throw new Error('Pyth supports only */USD tickers')
+    }
+    const priceQuotes = await this._getAllQuotesPromiseLimited()
+
+    const quote = priceQuotes[tickerSymbol]
+
+    if (!quote) {
+      throw new QuoteNotFoundError('PriceQuote', tickerSymbol)
+    }
+
+    return quote
+  }
+
+  async forPricesBySymbols(
+    tickerSymbols: string[],
+    quoteSymbol = 'USD'
+  ): Promise<PriceQuote[]> {
+    if (quoteSymbol !== 'USD') {
+      throw new Error('Pyth supports only */USD tickers')
+    }
+    const priceQuote = await this._getAllQuotesPromiseLimited()
+
+    return Object.values(priceQuote).filter((quote) =>
+      tickerSymbols.includes(quote.symbol)
+    )
+  }
+
   async forPriceByAddress(address: string): Promise<PriceQuote> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()
 
@@ -208,18 +240,6 @@ export class PythProvider implements PriceProvider {
     return quote
   }
 
-  async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
-    const priceQuotes = await this._getAllQuotesPromiseLimited()
-
-    const quote = priceQuotes[tickerSymbol]
-
-    if (!quote) {
-      throw new QuoteNotFoundError('PriceQuote', tickerSymbol)
-    }
-
-    return quote
-  }
-
   async forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()
 
@@ -231,14 +251,6 @@ export class PythProvider implements PriceProvider {
 
     return Object.values(priceQuotesByAddress).filter((quote) =>
       addressList.includes(quote.contractAddress!)
-    )
-  }
-
-  async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
-    const priceQuote = await this._getAllQuotesPromiseLimited()
-
-    return Object.values(priceQuote).filter((quote) =>
-      tickerSymbols.includes(quote.symbol)
     )
   }
 }

@@ -1,0 +1,166 @@
+[
+  {
+    "pair": ["ETH", "USD"],
+    "address": "0x02f5E9e9dcc66ba6392f6904D5Fcf8625d9B19C9"
+  },
+  {
+    "pair": ["FLOW", "USD"],
+    "address": "0x0542BbBfbc26A86EA92d2b7f6Da07DAf0CA091eD"
+  },
+  {
+    "pair": ["BTC", "USD"],
+    "address": "0x0C1272d2aC652D10d03bb4dEB0D31F15ea3EAb2b"
+  },
+  {
+    "pair": ["STETH", "USD"],
+    "address": "0x12922291D1FcD0d121B5C88f061047fE18732743"
+  },
+  {
+    "pair": ["FTM", "USD"],
+    "address": "0x13f11f2139C10A48eCD7A6A14d804f90b2cFC89A"
+  },
+  {
+    "pair": ["SUSD", "USD"],
+    "address": "0x17D582034c038BaEb17A9E2A969d06f550d3586b"
+  },
+  {
+    "pair": ["DYDX", "USD"],
+    "address": "0x19BcA7C81f3ed561a49326b78468EaC64D0E8F2a"
+  },
+  {
+    "pair": ["MATIC", "USD"],
+    "address": "0x1C1df24f0d06415fc3F58b1c1fDadd5fC85d2950"
+  },
+  {
+    "pair": ["RUNE", "USD"],
+    "address": "0x1aafcf49E103a71b31506Cb05FB072ED1B5b0414"
+  },
+  {
+    "pair": ["BNB", "USD"],
+    "address": "0x25dD1949cDb81f5fc38841a8abF342c4EF48dbfd"
+  },
+  {
+    "pair": ["APE", "USD"],
+    "address": "0x2Dd486F1FA76Fd1228a9c818C552c6A92F138453"
+  },
+  {
+    "pair": ["ZIL", "USD"],
+    "address": "0x397c2082dA7A0962A4FBF14e62E72dbCefB7a7Dc"
+  },
+  {
+    "pair": ["BOND", "USD"],
+    "address": "0x3b06B9b3ead7Ec34AE67E2D7f73B128dA09C583a"
+  },
+  {
+    "pair": ["BAL", "USD"],
+    "address": "0x44f690526B76D91072fb0427B0A24b882E612455"
+  },
+  {
+    "pair": ["OP", "USD"],
+    "address": "0x4F6dFDFd4d68F68b2692E79f9e94796fC8015770"
+  },
+  {
+    "pair": ["WAVES", "USD"],
+    "address": "0x503465204d3e093146B1E8762e2b221240E0eDA7"
+  },
+  {
+    "pair": ["SNX", "USD"],
+    "address": "0x584F57911b6EEDab5503E202f8e193663c9bd3DB"
+  },
+  {
+    "pair": ["LOOKS", "USD"],
+    "address": "0x5D7332Adf81c9E7372779E5F2F255B0A6E222fe1"
+  },
+  {
+    "pair": ["IMX", "USD"],
+    "address": "0x5D860ee3A9F47dfd86d40aec1EF7DDD876356F71"
+  },
+  {
+    "pair": ["LINK", "USD"],
+    "address": "0x5d101824C693C70a68FFc3CDb0Cc394F3a4fb9Ec"
+  },
+  {
+    "pair": ["SAND", "USD"],
+    "address": "0x5d1345669278128B77AF9662C5D6B5e0b2FFD54A"
+  },
+  {
+    "pair": ["WBTC", "USD"],
+    "address": "0x65F2c716937FB44b2C28417A7AfC2DACcF1C2D61"
+  },
+  {
+    "pair": ["ONE", "USD"],
+    "address": "0x663ed3D2aB9F8d5282a94BA4636E346e59bDdEB9"
+  },
+  {
+    "pair": ["AXS", "USD"],
+    "address": "0x7A18889f137B593f4E03C0A698A4360f43d1731c"
+  },
+  {
+    "pair": ["CRV", "USD"],
+    "address": "0x7c56d3650f9aCD992b3Aa635C04A311c54Ad264c"
+  },
+  {
+    "pair": ["AAVE", "USD"],
+    "address": "0x81cC0c227BF9bFB8088b14755DfcA65f7892203b"
+  },
+  {
+    "pair": ["ATOM", "USD"],
+    "address": "0x81d9a9056e9Af6585010B784Df5853a0fDEf8b11"
+  },
+  {
+    "pair": ["UNI", "USD"],
+    "address": "0x85A48ded8c35d82f8f29844e25dD51a70a23c93d"
+  },
+  {
+    "pair": ["DOGE", "USD"],
+    "address": "0x8AfC1cC622Be1Cd1644579c9c7eC3fbbA6bD02d2"
+  },
+  {
+    "pair": ["SOL", "USD"],
+    "address": "0x92C9B9C512759f5D04563eFa3698FC4fbF735d59"
+  },
+  {
+    "pair": ["USDT", "USD"],
+    "address": "0xAc37790fF4aBf9483fAe2D1f62fC61fE6b8E4789"
+  },
+  {
+    "pair": ["XMR", "USD"],
+    "address": "0xDa6fCf88c718eCEB18c2c08A543562b1146F4996"
+  },
+  {
+    "pair": ["PERP", "USD"],
+    "address": "0xE18a4E99F019F92CD72E0C7C05599d76a89296Cd"
+  },
+  {
+    "pair": ["LINK", "ETH"],
+    "address": "0xE67a10DA53Fcd59fae7e47F155c290cb5Defb4B0"
+  },
+  {
+    "pair": ["AVAX", "USD"],
+    "address": "0xa6d25eEBae9c841C44AD01c9176556a4c2189961"
+  },
+  {
+    "pair": ["FRAX", "USD"],
+    "address": "0xaB544FDAD5F68f0F8e53284f942D76177635A3D6"
+  },
+  {
+    "pair": ["DAI", "USD"],
+    "address": "0xbCe7579e241e5d676c2371Dc21891489dAcDA250"
+  },
+  {
+    "pair": ["FXS", "USD"],
+    "address": "0xc2212835DE6cb9Ef5e26b04E64f7798472Ff2812"
+  },
+  {
+    "pair": ["USDC", "USD"],
+    "address": "0xd1Cb03cc31caa72D34dba7eBE21897D9580c4AF0"
+  },
+  {
+    "pair": ["KNC", "USD"],
+    "address": "0xe4391393205B6265585250E7A026103a0D1E168d"
+  },
+  {
+    "pair": ["NEAR", "USD"],
+    "address": "0xf9eCc598293bd5Fb4F700AEB5C4Fb63B23CFE8Aa"
+  }
+]

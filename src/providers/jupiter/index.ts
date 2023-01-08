@@ -6,7 +6,6 @@ import {
   ProviderSlug,
   SupportedChains,
 } from '@yasp/models'
-import ms from 'ms'
 import { createSafeWretch } from '@yasp/requests'
 import { JUPITER_PRICE_API_URL } from './constants'
 import {
@@ -79,7 +78,13 @@ export class JupiterProvider implements PriceProvider {
     return this._priceResponseDataToTicker(priceResponseData)
   }
 
-  async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
+  async forPriceBySymbol(
+    tickerSymbol: string,
+    quoteSymbol = 'USD'
+  ): Promise<PriceQuote> {
+    if (quoteSymbol !== 'USD') {
+      throw new Error('Pyth supports only */USD tickers')
+    }
     const response = await this.requester
       .query({ id: tickerSymbol })
       .get()
@@ -142,7 +147,13 @@ export class JupiterProvider implements PriceProvider {
     return priceQuotes
   }
 
-  async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
+  async forPricesBySymbols(
+    tickerSymbols: string[],
+    quoteSymbol = 'USD'
+  ): Promise<PriceQuote[]> {
+    if (quoteSymbol !== 'USD') {
+      throw new Error('Pyth supports only */USD tickers')
+    }
     const chunkList = this._chunkList(tickerSymbols)
     const priceQuotesPromises: Promise<PriceQuote[]>[] = []
     const promiseLimit = pLimit(1)
