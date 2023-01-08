@@ -190,13 +190,7 @@ export class PythProvider implements PriceProvider {
     return this.cachedPriceQuotes
   }
 
-  async forPriceBySymbol(
-    tickerSymbol: string,
-    quoteSymbol = 'USD'
-  ): Promise<PriceQuote> {
-    if (quoteSymbol !== 'USD') {
-      throw new Error('Pyth supports only */USD tickers')
-    }
+  async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()
 
     const quote = priceQuotes[tickerSymbol]
@@ -208,13 +202,7 @@ export class PythProvider implements PriceProvider {
     return quote
   }
 
-  async forPricesBySymbols(
-    tickerSymbols: string[],
-    quoteSymbol = 'USD'
-  ): Promise<PriceQuote[]> {
-    if (quoteSymbol !== 'USD') {
-      throw new Error('Pyth supports only */USD tickers')
-    }
+  async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
     const priceQuote = await this._getAllQuotesPromiseLimited()
 
     return Object.values(priceQuote).filter((quote) =>

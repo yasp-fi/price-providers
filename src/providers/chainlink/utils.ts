@@ -7,14 +7,16 @@ export const convertChainlinkQuoteToPriceQuote = (
   data: ChainlinkPriceData,
   symbol: string,
   quoteSymbol: string,
+  feedAddress: string,
   providerSlug: ProviderSlug
 ): PriceQuote => {
-  return {
+  return new PriceQuote({
     id: v4().toString(),
     value: data.answer,
     symbol,
     providerSlug,
+    contractAddress: feedAddress,
     priceQuoteType: quoteSymbol === 'USD' ? 'fiat' : 'crypto',
     expiry: ms('1m'),
-  }
+  })
 }
