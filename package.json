@@ -84,6 +84,7 @@
   "author": "Danil Yasp",
   "license": "MIT",
   "dependencies": {
+    "@yasp/asset-amount": "^1.1.1",
     "@yasp/evm-lib": "^1.5.0",
     "@yasp/models": "^1.23.0",
     "@yasp/requests": "^1.1.0",
