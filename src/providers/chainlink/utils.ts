@@ -16,7 +16,7 @@ export const convertChainlinkQuoteToPriceQuote = (
     symbol,
     providerSlug,
     contractAddress: feedAddress,
-    priceQuoteType: quoteSymbol === 'USD' ? 'fiat' : 'crypto',
+    priceQuoteType: 'crypto',
     expiry: ms('1m'),
   })
 }

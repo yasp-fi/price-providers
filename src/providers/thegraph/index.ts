@@ -52,7 +52,7 @@ export class TheGraphProvider implements PriceProvider {
         symbol: token.symbol,
         contractAddress: token.id,
         providerSlug: this.providerSlug,
-        priceQuoteType: 'fiat',
+        priceQuoteType: 'crypto',
       })
     })
   }
