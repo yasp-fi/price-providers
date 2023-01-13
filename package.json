@@ -1,6 +1,6 @@
 {
   "name": "@yasp/price-providers",
-  "version": "0.0.1",
+  "version": "1.0.4",
   "description": "TS package template",
   "main": "dist/yasp-price-providers.cjs.js",
   "types": "dist/yasp-price-providers.d.ts",
@@ -41,7 +41,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@types/jest": "^28.1.6",
-    "@types/lodash": "^4.14.191",
+    "@types/lodash": "^4.5.7",
     "@types/ms": "^0.7.31",
     "@types/node": "^18.6.4",
     "@types/uuid": "^9.0.0",
@@ -84,8 +84,9 @@
   "author": "Danil Yasp",
   "license": "MIT",
   "dependencies": {
-    "@yasp/evm-lib": "^1.4.0",
-    "@yasp/models": "^1.21.0",
+    "@yasp/asset-amount": "^1.1.1",
+    "@yasp/evm-lib": "^1.5.0",
+    "@yasp/models": "^1.23.0",
     "@yasp/requests": "^1.1.0",
     "lodash": "^4.17.21",
     "ms": "^2.1.3",

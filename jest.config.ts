@@ -1,6 +1,9 @@
 import { Config } from '@jest/types'
+import { pathsToModuleNameMapper } from 'ts-jest'
 
-const transformIgnoreSources = [].join('|')
+const { compilerOptions } = require('../../tsconfig.base.json')
+
+const transformIgnoreSources = ['@wagmi/core'].join('|')
 
 const config: Config.InitialOptions = {
   detectOpenHandles: true,
@@ -8,15 +11,15 @@ const config: Config.InitialOptions = {
   preset: 'ts-jest',
   globals: {
     'ts-jest': {
-      tsconfig: 'tsconfig.json',
+      tsconfig: '<rootDir>/tsconfig.json',
     },
   },
   testMatch: ['**/?(*.)+(e2e-test|unit-test).ts'],
   testEnvironment: 'node',
   passWithNoTests: true,
-  moduleNameMapper: {
-    '@app/(.*)': '<rootDir>/src/$1',
-  },
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: process.cwd(),
+  }),
   transformIgnorePatterns: [
     `node_modules/(?!((jest-)?${transformIgnoreSources}))`,
   ],

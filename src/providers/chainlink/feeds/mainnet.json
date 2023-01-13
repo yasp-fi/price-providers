@@ -1,0 +1,722 @@
+[
+  {
+    "pair": ["OCEAN", "USD"],
+    "address": "0x06812A2035BDa4707107539725902e065622CEE7"
+  },
+  {
+    "pair": ["SNX", "USD"],
+    "address": "0x06ce8Be8729B6bA18dD3416E3C223a5d4DB5e755"
+  },
+  {
+    "pair": ["SPELL", "USD"],
+    "address": "0x070f15084600Aceace6D639CDDd0e341975D1e30"
+  },
+  {
+    "pair": ["GTC", "ETH"],
+    "address": "0x0E27a36B2dFc0935A99Ba0c9C8E0F764c2da606C"
+  },
+  {
+    "pair": ["HBAR", "USD"],
+    "address": "0x0F486F358b3D04AeA6800eFa260e01286d8A50F1"
+  },
+  {
+    "pair": ["ETC", "USD"],
+    "address": "0x0c7907d97B7F708Ecda1A0B3124D32cd8b1e3920"
+  },
+  {
+    "pair": ["ETH", "BTC"],
+    "address": "0x0f00392FcB466c0E4E4310d81b941e07B4d5a079"
+  },
+  {
+    "pair": ["AVAX", "USD"],
+    "address": "0x0fC3657899693648bbA4dbd2d8b33b82E875105D"
+  },
+  {
+    "pair": ["sUSD", "USD"],
+    "address": "0x1187272A0E3A603eC4734CeC73a0880055eCC593"
+  },
+  {
+    "pair": ["DAI", "ETH"],
+    "address": "0x158228e08C52F3e2211Ccbc8ec275FA93f6033FC"
+  },
+  {
+    "pair": ["SRM", "ETH"],
+    "address": "0x162aa56EF75ab11cE2573ECe62B579f4B40A58dB"
+  },
+  {
+    "pair": ["AXS", "ETH"],
+    "address": "0x16423B2B6873225e26564b182b3318aFCdBFcade"
+  },
+  {
+    "pair": ["MIM", "USD"],
+    "address": "0x18f0112E30769961AF90FDEe0D1c6B27E6d72D92"
+  },
+  {
+    "pair": ["CAKE", "USD"],
+    "address": "0x1C026C25271c1bFbA95B65c848F734a23eA62D4e"
+  },
+  {
+    "pair": ["FEI", "USD"],
+    "address": "0x1D244648d5a63618751d006886268Ae3550d0Dfd"
+  },
+  {
+    "pair": ["INJ", "USD"],
+    "address": "0x1a4E4B344125E7ef78de22b55FCeF5a4bc45f605"
+  },
+  {
+    "pair": ["TOMO", "USD"],
+    "address": "0x20086D92838C475fc3aDE8B745EfB33213793080"
+  },
+  {
+    "pair": ["YFII", "ETH"],
+    "address": "0x20dF77bB4cE1478e89a7461CAcE8dc016f9198e4"
+  },
+  {
+    "pair": ["LUSD", "USD"],
+    "address": "0x27b97a63091d185cE056e1747624b9B92BAAD056"
+  },
+  {
+    "pair": ["GNO", "ETH"],
+    "address": "0x299e74895b4De8dF505C43146D0555983859034B"
+  },
+  {
+    "pair": ["ARPA", "USD"],
+    "address": "0x29D9CEA993A2d54B1C959cCF233023B853098ac8"
+  },
+  {
+    "pair": ["ATOM", "ETH"],
+    "address": "0x2E3Bc7624a3B44954b53e08c436be44f7f16fD00"
+  },
+  {
+    "pair": ["BAL", "ETH"],
+    "address": "0x2f2c0C1727Ce8C429A237DDFBBb87357893fBD5D"
+  },
+  {
+    "pair": ["CSPR", "USD"],
+    "address": "0x30F3037f0E13d6bdeD3c5B7809994F47e9656b4a"
+  },
+  {
+    "pair": ["DOGE", "USD"],
+    "address": "0x33CCa8E7420114dB103d61bd39A72ff65E46352D"
+  },
+  {
+    "pair": ["OMG", "USD"],
+    "address": "0x34B41725Cf934866A4b89d65395F15af2Cb9aE89"
+  },
+  {
+    "pair": ["DODO", "USD"],
+    "address": "0x3600713c848dE06c8346900E3deDd3CAc21c06ff"
+  },
+  {
+    "pair": ["ETH", "USD"],
+    "address": "0x37bC7498f4FF12C19678ee8fE19d713b87F6a9e6"
+  },
+  {
+    "pair": ["BIT", "USD"],
+    "address": "0x382db44bCfb92C398b93e5fF6Cc100FC321140c9"
+  },
+  {
+    "pair": ["FLOW", "USD"],
+    "address": "0x3C640c857f1fF57ff4E24CfF1924F14A9bB9F2Ad"
+  },
+  {
+    "pair": ["REN", "USD"],
+    "address": "0x3d0bB55D0D2F255d7A0EAb8A53a91b3369728E36"
+  },
+  {
+    "pair": ["ZRX", "USD"],
+    "address": "0x3d47eF9690Bd00C77c568b73140dC20F34453766"
+  },
+  {
+    "pair": ["IMX", "USD"],
+    "address": "0x3f00247Dc3bc14A8dCfA682318Ce566b1f34343A"
+  },
+  {
+    "pair": ["SUSD", "ETH"],
+    "address": "0x45bb69B89D60878d1e42522342fFCa9F2077dD84"
+  },
+  {
+    "pair": ["C98", "USD"],
+    "address": "0x468F99A1fCDf25B508D256a25698FB7c4E6Dd649"
+  },
+  {
+    "pair": ["MANA", "ETH"],
+    "address": "0x46b77070f9256523c2F31c333b72C3E102f8A8A7"
+  },
+  {
+    "pair": ["MATIC", "USD"],
+    "address": "0x4B35F7854e1fd8291f4EC714aC3EBB1DeA450585"
+  },
+  {
+    "pair": ["OCEAN", "ETH"],
+    "address": "0x4b75FE6e4a53A510AbC39c7328B0b06E74a3F624"
+  },
+  {
+    "pair": ["FEI", "ETH"],
+    "address": "0x4bE991B4d560BBa8308110Ed1E0D7F8dA60ACf6A"
+  },
+  {
+    "pair": ["XRP", "USD"],
+    "address": "0x4d839a486EC0B1C9b0D9e9D397993Ba5B150cB34"
+  },
+  {
+    "pair": ["OGN", "ETH"],
+    "address": "0x51aa283a37771B33101e88658C440951ee0AE02d"
+  },
+  {
+    "pair": ["BOND", "ETH"],
+    "address": "0x5667eE03110045510897aDa33DC561cEfCBcC904"
+  },
+  {
+    "pair": ["FRAX", "ETH"],
+    "address": "0x56f98706C14DF5C290b02Cec491bB4c20834Bb51"
+  },
+  {
+    "pair": ["BADGER", "ETH"],
+    "address": "0x586524Ef790f7357c6cb8461b20d788Da14A636B"
+  },
+  {
+    "pair": ["BUSD", "ETH"],
+    "address": "0x5952c7F1Ab270D22d677762Be3dAd0BA9e5cd23d"
+  },
+  {
+    "pair": ["CTX", "USD"],
+    "address": "0x5E3c7bdf06C35f88c6c0De739ed1c04767e330F9"
+  },
+  {
+    "pair": ["KP3R", "ETH"],
+    "address": "0x61B5793cd5f454D2B25bA1AcB5C1aA1728f67E1c"
+  },
+  {
+    "pair": ["FRAX", "USD"],
+    "address": "0x61eB091ea16A32ea5B880d0b3D09d518c340D750"
+  },
+  {
+    "pair": ["KSM", "USD"],
+    "address": "0x630163B84674B2B404fB6036A510574F259c5Cb7"
+  },
+  {
+    "pair": ["ALCX", "ETH"],
+    "address": "0x64a119DCf78E7E3FcED89c429f6F47Bf0cd80250"
+  },
+  {
+    "pair": ["PAXG", "ETH"],
+    "address": "0x66d35ccD808317870198793a96b88ab69dCAe53B"
+  },
+  {
+    "pair": ["UNI", "USD"],
+    "address": "0x68577f915131087199Fe48913d8b416b3984fd38"
+  },
+  {
+    "pair": ["UMA", "ETH"],
+    "address": "0x68a371D12213a1EbDd5fa9a2EE5519E6B73F1E37"
+  },
+  {
+    "pair": ["DYDX", "USD"],
+    "address": "0x6A0cCCA35f6ca00146547B949233C63441B34d7a"
+  },
+  {
+    "pair": ["ZRX", "ETH"],
+    "address": "0x6B39588D2FC7990CC81544DFd4674C909E9EFeea"
+  },
+  {
+    "pair": ["USDN", "USD"],
+    "address": "0x6a1Ef9bF93048533c49a1Eed984c080608f7DB6A"
+  },
+  {
+    "pair": ["GUSD", "USD"],
+    "address": "0x6a805f2580b8D75d40331c26C074c2c42961E7F2"
+  },
+  {
+    "pair": ["COMP", "USD"],
+    "address": "0x6eaC850f531d0588c0114f1E93F843B78669E6d2"
+  },
+  {
+    "pair": ["DASH", "USD"],
+    "address": "0x7002049FDCa829ED7082EFA03860b078aD4B5Efe"
+  },
+  {
+    "pair": ["STETH", "ETH"],
+    "address": "0x716BB759A5f6faCdfF91F0AfB613133d510e1573"
+  },
+  {
+    "pair": ["ALPHA", "ETH"],
+    "address": "0x71c8D42d35eD9276543FCa95d80Ae0858553Bf44"
+  },
+  {
+    "pair": ["APE", "ETH"],
+    "address": "0x72002129A3834d63C57d157DDF069deE37b08F24"
+  },
+  {
+    "pair": ["CTSI", "ETH"],
+    "address": "0x720192921a4b6fb026fA52bf03F991b65b740147"
+  },
+  {
+    "pair": ["ATOM", "USD"],
+    "address": "0x736E09DE064A2a461F197643A26bC1ab7Dc4D5D3"
+  },
+  {
+    "pair": ["BUSD", "USD"],
+    "address": "0x73dc1b226f7DfAc353bdB41A27C4212213e6aF07"
+  },
+  {
+    "pair": ["MLN", "ETH"],
+    "address": "0x751d87122c81f0eCe576338C400ebB978D039188"
+  },
+  {
+    "pair": ["GRT", "ETH"],
+    "address": "0x7531f77095Bed9d63cB3E9EA305111a7DCE969A2"
+  },
+  {
+    "pair": ["ENS", "USD"],
+    "address": "0x780f1bD91a5a22Ede36d4B2b2c0EcCB9b1726a28"
+  },
+  {
+    "pair": ["ORN", "ETH"],
+    "address": "0x782EE2B86316d04F226Ba416d5dF5358a2D6102f"
+  },
+  {
+    "pair": ["USDC", "USD"],
+    "address": "0x789190466E21a8b78b8027866CBBDc151542A26C"
+  },
+  {
+    "pair": ["LDO", "ETH"],
+    "address": "0x7898AcCC83587C3C55116c5230C17a6Cd9C71bad"
+  },
+  {
+    "pair": ["MANA", "USD"],
+    "address": "0x7Be21AeF96E2FAeB8Dc0d07306814319cA034cad"
+  },
+  {
+    "pair": ["USDT", "ETH"],
+    "address": "0x7De0d6fce0C128395C488cb4Df667cdbfb35d7DE"
+  },
+  {
+    "pair": ["HT", "USD"],
+    "address": "0x7a4297b2fd0Ba2F5687EFAC4df487B1C7B71392b"
+  },
+  {
+    "pair": ["ANT", "ETH"],
+    "address": "0x7b14dF2fb3e02215Fa5525aC8A5abdAaA6314aC0"
+  },
+  {
+    "pair": ["CRV", "ETH"],
+    "address": "0x7f67Ca2ce5299a67acd83D52A064C5b8e41dDb80"
+  },
+  {
+    "pair": ["BADGER", "USD"],
+    "address": "0x8093150EC164753994A1F65616E04Ae92a9Ef8c5"
+  },
+  {
+    "pair": ["BTC", "ETH"],
+    "address": "0x81076d6Ff2620Ea9Dd7bA9c1015f0d09A3A732E6"
+  },
+  {
+    "pair": ["REQ", "USD"],
+    "address": "0x8127087BaD4fd28e1DAcbAfc3d3040E701b2B9A2"
+  },
+  {
+    "pair": ["BAT", "ETH"],
+    "address": "0x821f24DAcA9Ad4910c1EdE316D2713fC923Da698"
+  },
+  {
+    "pair": ["BNT", "USD"],
+    "address": "0x82263275FBF3fa92c6eE81632725b6BFbE4B02Da"
+  },
+  {
+    "pair": ["NMR", "ETH"],
+    "address": "0x861334DEC28b3ba71DFFb1ABf4E57D4AD3964b5f"
+  },
+  {
+    "pair": ["OHM", "ETH"],
+    "address": "0x87831da9319260B0B38dD39A73EBD4c2C10C588c"
+  },
+  {
+    "pair": ["FARM", "ETH"],
+    "address": "0x883Ba661FD9824778FF14a97F3A03eb324540201"
+  },
+  {
+    "pair": ["ONT", "USD"],
+    "address": "0x8B1668905367a2EFB610e7aA1DC6F4F26d1f7268"
+  },
+  {
+    "pair": ["YFI", "USD"],
+    "address": "0x8a4D74003870064d41D4f84940550911FBfCcF04"
+  },
+  {
+    "pair": ["OM", "USD"],
+    "address": "0x8c318F865790CA448B99Cd22160089F921060d5b"
+  },
+  {
+    "pair": ["RAI", "ETH"],
+    "address": "0x8d6d808eC1f8803b54e2286BD6992f5601fCF3a8"
+  },
+  {
+    "pair": ["CVX", "USD"],
+    "address": "0x8d73Ac44Bf11CadCDc050BB2BcCaE8c519555f1a"
+  },
+  {
+    "pair": ["MKR", "USD"],
+    "address": "0x908EDc7E1974Ecab1cA7164424BC4Cac287D83Ad"
+  },
+  {
+    "pair": ["IOTX", "USD"],
+    "address": "0x910BD38d1C8D06d9c32b92AED3833DD503eE1321"
+  },
+  {
+    "pair": ["ADX", "USD"],
+    "address": "0x910e014bBA427e9FCB48B4D314Dc81f840d7b6E3"
+  },
+  {
+    "pair": ["EURT", "USD"],
+    "address": "0x920E5DC12E7500c6571C63D4Bba19c62e99d6883"
+  },
+  {
+    "pair": ["OXT", "USD"],
+    "address": "0x932354AeA65a17B265bf22D29f7132ECfE86747d"
+  },
+  {
+    "pair": ["LRC", "ETH"],
+    "address": "0x9405e02996Aa6f2176E2748EEfbCedd405870cee"
+  },
+  {
+    "pair": ["TUSD", "ETH"],
+    "address": "0x9534df8F2C9289bbDB0c736E9FeF402B20f1828E"
+  },
+  {
+    "pair": ["TUSD", "USD"],
+    "address": "0x98953e9C76573e06ec265Bdde1dbB89fa02d56d3"
+  },
+  {
+    "pair": ["FIL", "ETH"],
+    "address": "0x9965AD91B4877d29c246445011Ce370b3890C5C2"
+  },
+  {
+    "pair": ["BNT", "ETH"],
+    "address": "0x9A4458D02449eF9B42562205718679a8B4204962"
+  },
+  {
+    "pair": ["COMP", "ETH"],
+    "address": "0x9D6acD34D481512586844fD65328BD358d306752"
+  },
+  {
+    "pair": ["GUSD", "ETH"],
+    "address": "0x9c2C487DAd6C8e5bb49dC6908a29D95a234FaAd8"
+  },
+  {
+    "pair": ["FXS", "USD"],
+    "address": "0x9d78092775DFE715dFe1b0d71aC1a4d6e3652559"
+  },
+  {
+    "pair": ["OMG", "ETH"],
+    "address": "0xA1b2e83815723e4e4BBF437E56f65b6AAFd5754b"
+  },
+  {
+    "pair": ["RSR", "USD"],
+    "address": "0xA27CfD69345a6e121284a3C0ae07BB64b707cDD2"
+  },
+  {
+    "pair": ["GRT", "USD"],
+    "address": "0xA6FA156482a3028846c886Fcc94cA8ec607187B4"
+  },
+  {
+    "pair": ["YFI", "ETH"],
+    "address": "0xAa5aa80e416f9d32ffE6C390e24410d02D203F70"
+  },
+  {
+    "pair": ["TRU", "USD"],
+    "address": "0xAbA1EACE8627c15324890315E942A4FBD73b70E0"
+  },
+  {
+    "pair": ["PERP", "USD"],
+    "address": "0xAcD3657b1D552623992aea368D9192C780B9d441"
+  },
+  {
+    "pair": ["USDK", "USD"],
+    "address": "0xAe395258FbcE63ecEeB2Cc0B73D4875797F4598d"
+  },
+  {
+    "pair": ["BTC", "USD"],
+    "address": "0xAe74faA92cB67A95ebCAB07358bC222e33A34dA7"
+  },
+  {
+    "pair": ["CBETH", "USD"],
+    "address": "0xB0E6f1372687B279ba6Ce9faF1732DD4f6eF28b7"
+  },
+  {
+    "pair": ["KNC", "ETH"],
+    "address": "0xB3B1882C0A7eB5097F12547bCD20Dc6FAE7aC8a6"
+  },
+  {
+    "pair": ["LON", "ETH"],
+    "address": "0xB82A0803DF982412dAeE9D82826395E3F0BeD1A2"
+  },
+  {
+    "pair": ["SHIB", "ETH"],
+    "address": "0xB895192F5a49914ae760F01Ef92DB285d94C783E"
+  },
+  {
+    "pair": ["SNX", "ETH"],
+    "address": "0xBAFe3CB0E563E914806A99D547bdBF2Cfcf5fDF6"
+  },
+  {
+    "pair": ["ANKR", "USD"],
+    "address": "0xBbC9Ab3F66d0b934089FdCceda3615a6bb879633"
+  },
+  {
+    "pair": ["BNB", "USD"],
+    "address": "0xC45eBD0F901bA6B2B8C7e70b717778f055eF5E6D"
+  },
+  {
+    "pair": ["PERP", "ETH"],
+    "address": "0xC4aA0d2237A823f99fe2Dc74F993eEbDf5524489"
+  },
+  {
+    "pair": ["PHA", "USD"],
+    "address": "0xCB00334A422FC8538794f3CE0149540a95f9e228"
+  },
+  {
+    "pair": ["ENJ", "USD"],
+    "address": "0xCBbe4ff0d8add07CCe71afC0CcdF3492b8eaA76A"
+  },
+  {
+    "pair": ["SXP", "USD"],
+    "address": "0xCFC1C64e721bC034ab894302B78149b3C7a1066d"
+  },
+  {
+    "pair": ["ALUSD", "USD"],
+    "address": "0xD0C576383d8479407eAb872a08DeabcF69602fFd"
+  },
+  {
+    "pair": ["XCN", "USD"],
+    "address": "0xD6A3a9Bb4bd49DdB2374CA58Edf47a8bB63Af3d2"
+  },
+  {
+    "pair": ["WBTC", "BTC"],
+    "address": "0xD7623f1d24b35c392862fB67C9716564A117C9DE"
+  },
+  {
+    "pair": ["DAI", "USD"],
+    "address": "0xDEc0a100eaD1fAa37407f0Edc76033426CF90b82"
+  },
+  {
+    "pair": ["SAND", "USD"],
+    "address": "0xDF627aa5B9C024818c6950fDAD7e4C16D93b10Ca"
+  },
+  {
+    "pair": ["BAND", "ETH"],
+    "address": "0xDF9F750A94bF2Faea84Ab783927290FE5e0F7606"
+  },
+  {
+    "pair": ["SOL", "USD"],
+    "address": "0xDf30249744A419891f822ea4a9E80cd76d7Fbd23"
+  },
+  {
+    "pair": ["LINK", "USD"],
+    "address": "0xDfd03BfC3465107Ce570a0397b247F546a42D0fA"
+  },
+  {
+    "pair": ["REN", "ETH"],
+    "address": "0xEe34b3Ce92A6B635450B9cC6FAa976F70a106BE7"
+  },
+  {
+    "pair": ["USDP", "USD"],
+    "address": "0xF3d70857B489Ecc6768D0982B773E1Cba9E1f00b"
+  },
+  {
+    "pair": ["BNB", "ETH"],
+    "address": "0xF9Bf9ca442e15c607b2d4b6Fe01f7fa59a016554"
+  },
+  {
+    "pair": ["MKR", "ETH"],
+    "address": "0xFFC14A3B26708545BcCf8e915e2e8348123f5460"
+  },
+  {
+    "pair": ["LTC", "USD"],
+    "address": "0xFe3d09D8bAd5DA65E0160cF0cB53F6115Fb6EA8b"
+  },
+  {
+    "pair": ["GLM", "USD"],
+    "address": "0xa39b675ECc48E0681163f8788430e16b750d0f69"
+  },
+  {
+    "pair": ["RUNE", "ETH"],
+    "address": "0xa8156eFf735Dce35Eb01B119F6a7f4B55944184a"
+  },
+  {
+    "pair": ["USDT", "USD"],
+    "address": "0xa964273552C1dBa201f5f000215F5BD5576e8f93"
+  },
+  {
+    "pair": ["APE", "USD"],
+    "address": "0xa99999b1475F24037e8b6947aBBC7710676E77dd"
+  },
+  {
+    "pair": ["1INCH", "ETH"],
+    "address": "0xb2F68c82479928669B0487D1dAeD6Ef47b63411e"
+  },
+  {
+    "pair": ["CRO", "USD"],
+    "address": "0xb2aD164c008Da54FCEaC79Ef18C0a8fE2d935865"
+  },
+  {
+    "pair": ["ALCX", "USD"],
+    "address": "0xb49322fF269d67A5aF0718C19463eC9EE7BF821E"
+  },
+  {
+    "pair": ["CRV", "USD"],
+    "address": "0xb4c4a493AB6356497713A78FFA6c60FB53517c63"
+  },
+  {
+    "pair": ["AMPL", "ETH"],
+    "address": "0xb92EE05E7514FfEDDDbcd76F5e3064691F6eC79e"
+  },
+  {
+    "pair": ["ADA", "USD"],
+    "address": "0xbC3C868763b7C15d0ce527af455041919E9c07B1"
+  },
+  {
+    "pair": ["KNC", "USD"],
+    "address": "0xbC60258F775683eA28048030806Ad3A80c4A33Ae"
+  },
+  {
+    "pair": ["ERN", "USD"],
+    "address": "0xbDa0c715E5F153092A0d9d6dBBbDCc2beF892618"
+  },
+  {
+    "pair": ["FTM", "ETH"],
+    "address": "0xbDb80D19dEA36EB7f63bdFD2bdD4033B2b7e8e4d"
+  },
+  {
+    "pair": ["DOT", "USD"],
+    "address": "0xbE4274DfB7801948e2cc2a913744e9498dDC8d20"
+  },
+  {
+    "pair": ["LINK", "ETH"],
+    "address": "0xbba12740DE905707251525477bAD74985DeC46D2"
+  },
+  {
+    "pair": ["WNXM", "ETH"],
+    "address": "0xbd624B453d0a882B87Cbf85FeBdcf493cFFBd8D9"
+  },
+  {
+    "pair": ["SUSHI", "USD"],
+    "address": "0xbd6C554554834ee97828B6DA732dCa7461DDf9d4"
+  },
+  {
+    "pair": ["BAL", "USD"],
+    "address": "0xbd9350a3a2fd6e3Ad0a053a567f2609a1bf6c505"
+  },
+  {
+    "pair": ["UNI", "ETH"],
+    "address": "0xc1D1d0Da0fCf78157EA25D0E64e3BE679813a1F7"
+  },
+  {
+    "pair": ["TRIBE", "ETH"],
+    "address": "0xc1D757bee6BCDD45093979bFE60d341B833B2dB0"
+  },
+  {
+    "pair": ["ILV", "ETH"],
+    "address": "0xc1F2929b9449Ef97c5A75fd10fD0542984422f8b"
+  },
+  {
+    "pair": ["WING", "USD"],
+    "address": "0xc29d104A418a08407f9f2CDb614c1CDCf82986e0"
+  },
+  {
+    "pair": ["SUSHI", "ETH"],
+    "address": "0xd01BBB3Afed2cb5ca92Ca3834d441dc737F0Da70"
+  },
+  {
+    "pair": ["BCH", "USD"],
+    "address": "0xd054be48Ae13A89a82744373f647A755dF7CaE17"
+  },
+  {
+    "pair": ["CEL", "ETH"],
+    "address": "0xd0BB178dEdC71470BA68380CBd99c4A963d01507"
+  },
+  {
+    "pair": ["1INCH", "USD"],
+    "address": "0xd2bdD1E01fd2F8d7d42b209c111c7b32158b5a42"
+  },
+  {
+    "pair": ["CBETH", "ETH"],
+    "address": "0xd74FF3f1b565597E59D44320F53a5C5c8BA85f7b"
+  },
+  {
+    "pair": ["RLC", "ETH"],
+    "address": "0xd7Fc11b34D7BaE2E94B958C4ab06D950f0bD4C3E"
+  },
+  {
+    "pair": ["BAT", "USD"],
+    "address": "0xd90CA9ac986e453CF51d958071D68B82d17a47E6"
+  },
+  {
+    "pair": ["NEAR", "USD"],
+    "address": "0xd9701835dC47837B53D5Cfe95eB5a66f42B56901"
+  },
+  {
+    "pair": ["AUDIO", "USD"],
+    "address": "0xd9B4Ac554e3eefE84Ae80F5Dee0D45926233160b"
+  },
+  {
+    "pair": ["STETH", "USD"],
+    "address": "0xdA31bc2B08F22AE24aeD5F6EB1E71E96867BA196"
+  },
+  {
+    "pair": ["ENJ", "ETH"],
+    "address": "0xdBd66e8D31F506e0cc8CB2f346De4C7FA3f655DE"
+  },
+  {
+    "pair": ["AAVE", "ETH"],
+    "address": "0xdF0da6B3d19E4427852F2112D0a963d8A158e9c7"
+  },
+  {
+    "pair": ["FORTH", "USD"],
+    "address": "0xe2d6D8e799Df0a377FD14Ee18b95fd7cAa389017"
+  },
+  {
+    "pair": ["AAVE", "USD"],
+    "address": "0xe3f0dEdE4B499c07e12475087AB1A084b5F93bc0"
+  },
+  {
+    "pair": ["NMR", "USD"],
+    "address": "0xe4E345594375B54F395B54C41bD8b370A302bf69"
+  },
+  {
+    "pair": ["USDC", "ETH"],
+    "address": "0xe5BbBdb2Bb953371841318E1Edfbf727447CeF2E"
+  },
+  {
+    "pair": ["HIGH", "USD"],
+    "address": "0xeA23780dc14d1aC9eb3AB203A9bb7C1A6660615E"
+  },
+  {
+    "pair": ["EOS", "USD"],
+    "address": "0xea7C55976844396f3bD4C89F66988b8b5Be5E96a"
+  },
+  {
+    "pair": ["XMR", "USD"],
+    "address": "0xf09828103D306f50aF7e3132adb6DeF77c6d96f7"
+  },
+  {
+    "pair": ["CVX", "ETH"],
+    "address": "0xf1F7F7BFCc5E9D6BB8D9617756beC06A5Cbe1a49"
+  },
+  {
+    "pair": ["FOR", "USD"],
+    "address": "0xf649bC5C0e99BDEb06702e3db242B9F93DE44462"
+  },
+  {
+    "pair": ["CREAM", "ETH"],
+    "address": "0xf8efB55FbF6E7f48637561182dac1Ef09F38d767"
+  },
+  {
+    "pair": ["AMP", "USD"],
+    "address": "0xfAaA7460eD59C12E204349766CE73Cf5202e6aD6"
+  },
+  {
+    "pair": ["CELO", "ETH"],
+    "address": "0xffDb505cAd574AF3B73e0f4005CcF54a2da100ae"
+  }
+]

@@ -38,7 +38,7 @@ export class PythProvider implements PriceProvider {
 
   constructor(props: PythProviderProps) {
     this.chain = props.chain
-    this.providerSlug = `pyth-${this.chain}`
+    this.providerSlug = `pyth-${this.chain}` as ProviderSlug
     this.assetsSupported = props.assetsSupported
     this.pythContractAddress = PYTH_ADDRESSES_BY_CHAIN[this.chain]
   }
@@ -71,7 +71,7 @@ export class PythProvider implements PriceProvider {
     const value = parseInt(notFormattedPrice) / 10 ** Math.abs(expo)
     const asset = this._symbolToAsset(priceFeed.assetSymbol)
     const symbol = asset?.symbol ?? priceFeed.assetSymbol
-    const contractAddress = asset?.contractAddress
+    const contractAddress = asset?.onChainAddress
 
     return new PriceQuote({
       id: v4().toString(),
@@ -190,6 +190,33 @@ export class PythProvider implements PriceProvider {
     return this.cachedPriceQuotes
   }
 
+  forAllQuotes(): Promise<PriceQuote[]> {
+    return this.forPricesByAddressList(
+      this.assetsSupported.map(asset => asset.onChainAddress)
+    )
+  }
+
+
+  async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
+    const priceQuotes = await this._getAllQuotesPromiseLimited()
+
+    const quote = priceQuotes[tickerSymbol]
+
+    if (!quote) {
+      throw new QuoteNotFoundError('PriceQuote', tickerSymbol)
+    }
+
+    return quote
+  }
+
+  async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
+    const priceQuote = await this._getAllQuotesPromiseLimited()
+
+    return Object.values(priceQuote).filter((quote) =>
+      tickerSymbols.includes(quote.symbol)
+    )
+  }
+
   async forPriceByAddress(address: string): Promise<PriceQuote> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()
 
@@ -208,18 +235,6 @@ export class PythProvider implements PriceProvider {
     return quote
   }
 
-  async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
-    const priceQuotes = await this._getAllQuotesPromiseLimited()
-
-    const quote = priceQuotes[tickerSymbol]
-
-    if (!quote) {
-      throw new QuoteNotFoundError('PriceQuote', tickerSymbol)
-    }
-
-    return quote
-  }
-
   async forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()
 
@@ -231,14 +246,6 @@ export class PythProvider implements PriceProvider {
 
     return Object.values(priceQuotesByAddress).filter((quote) =>
       addressList.includes(quote.contractAddress!)
-    )
-  }
-
-  async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
-    const priceQuote = await this._getAllQuotesPromiseLimited()
-
-    return Object.values(priceQuote).filter((quote) =>
-      tickerSymbols.includes(quote.symbol)
     )
   }
 }
