@@ -1,4 +1,10 @@
-import { Asset, ChainIds, PriceQuote, ProviderSlug, SupportedChains } from '@yasp/models'
+import {
+  Asset,
+  ChainIds,
+  PriceQuote,
+  ProviderSlug,
+  SupportedChains,
+} from '@yasp/models'
 import ms from 'ms'
 import { CHAINLINK_FEEDS_BY_CHAIN } from './constants'
 import { PriceProvider } from '../../core/provider'
@@ -8,17 +14,17 @@ import { convertChainlinkQuoteToPriceQuote } from './utils'
 
 export type ChainlinkProviderProps = {
   chainId: ChainIds
-	chain: SupportedChains
-	quoteSymbol?: string
+  chain: SupportedChains
+  quoteSymbol?: string
 }
 
 export class ChainlinkProvider implements PriceProvider {
   chainId: ChainIds
-	chain: SupportedChains
+  chain: SupportedChains
   providerSlug: ProviderSlug
   priceFeeds: ChainlinkDataFeed[]
   chainlinkContract: Chainlink
-	quoteSymbol: string
+  quoteSymbol: string
   assetsSupported: Asset[] = []
 
   cachedPriceQuotes: Record<string, PriceQuote> = {}
@@ -27,16 +33,16 @@ export class ChainlinkProvider implements PriceProvider {
 
   constructor(props: ChainlinkProviderProps) {
     this.chainId = props.chainId
-		this.chain = props.chain
+    this.chain = props.chain
     this.providerSlug = `chainlink-${this.chain}` as ProviderSlug
     this.priceFeeds = CHAINLINK_FEEDS_BY_CHAIN[this.chainId]
     this.chainlinkContract = new Chainlink(props.chainId)
-		this.quoteSymbol = props.quoteSymbol || 'USD'
+    this.quoteSymbol = props.quoteSymbol || 'USD'
   }
-  
+
   forAllQuotes(): Promise<PriceQuote[]> {
     return this.forPricesBySymbols(
-      this.assetsSupported.map(asset => asset.symbol)
+      this.assetsSupported.map((asset) => asset.symbol)
     )
   }
 
@@ -56,12 +62,11 @@ export class ChainlinkProvider implements PriceProvider {
     return feed.pair[0]
   }
 
-  async forPricesBySymbols(
-    tickerSymbols: string[],
-  ): Promise<PriceQuote[]> {
+  async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
     const feeds = this.priceFeeds.filter(
       (feed) =>
-        tickerSymbols.includes(feed.pair[0]) && feed.pair[1] === this.quoteSymbol
+        tickerSymbols.includes(feed.pair[0]) &&
+        feed.pair[1] === this.quoteSymbol
     )
     const ids = feeds.map((feed) => feed.address)
     const data = await this.chainlinkContract.getFeedsResult(ids)
@@ -70,15 +75,13 @@ export class ChainlinkProvider implements PriceProvider {
         item,
         this.#forTickerSymbol(ids[i]),
         this.quoteSymbol,
-				ids[i],
+        ids[i],
         this.providerSlug
       )
     })
   }
 
-  async forPriceBySymbol(
-    tickerSymbol: string,
-  ): Promise<PriceQuote> {
+  async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
     const feed = this.priceFeeds.find((feed) => tickerSymbol === feed.pair[0])
     if (!feed) {
       throw new Error(
@@ -90,7 +93,7 @@ export class ChainlinkProvider implements PriceProvider {
       data,
       tickerSymbol,
       this.quoteSymbol,
-			feed.address,
+      feed.address,
       this.providerSlug
     )
   }

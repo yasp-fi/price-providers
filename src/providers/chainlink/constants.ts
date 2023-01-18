@@ -1,4 +1,4 @@
-import { ChainIds, SupportedChains } from '@yasp/models'
+import { ChainIds } from '@yasp/models'
 import mainnetFeeds from './feeds/mainnet.json'
 import arbitrumFeeds from './feeds/arbitrum.json'
 import optimismFeeds from './feeds/optimism.json'

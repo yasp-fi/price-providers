@@ -72,7 +72,7 @@ export class TheGraphProvider implements PriceProvider {
 
   async forPricesByAddressList(addressList: string[]): Promise<PriceQuote[]> {
     await this.fetchUniswapQuotes()
-    const tasks = addressList.map(address => this.forPriceByAddress(address))
+    const tasks = addressList.map((address) => this.forPriceByAddress(address))
     return Promise.all(tasks)
   }
 
@@ -89,7 +89,7 @@ export class TheGraphProvider implements PriceProvider {
 
   async forPricesBySymbols(tickerSymbols: string[]): Promise<PriceQuote[]> {
     await this.fetchUniswapQuotes()
-    const tasks = tickerSymbols.map(symbol => this.forPriceBySymbol(symbol))
+    const tasks = tickerSymbols.map((symbol) => this.forPriceBySymbol(symbol))
     return Promise.all(tasks)
   }
 
