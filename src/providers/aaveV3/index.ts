@@ -27,21 +27,27 @@ export class AaveProvider implements PriceProvider {
     this.chain = props.chain
     this.providerSlug = `aave-${this.chain}` as ProviderSlug
     this.aaveContract = new Aave(props.chainId)
+    this.assetsSupported = props.assetsSupported
   }
 
   async forAllQuotes(): Promise<PriceQuote[]> {
     const reserveData = await this.aaveContract.getReserveAssets()
+    const reserveAssets = reserveData.map((r) => r.address.toLowerCase())
     const priceMap = Object.fromEntries(
-      reserveData.map((i) => [i.address, i.price.toFixed(8)])
+      reserveData.map((i) => [i.address.toLowerCase(), i.price.toFixed(8)])
     )
-    return this.assetsSupported.map((asset) => {
+
+    const supportedAssets = this.assetsSupported.filter((asset) =>
+      reserveAssets.includes(asset.onChainAddress.toLowerCase())
+    )
+    return supportedAssets.map((asset) => {
       return new PriceQuote({
         id: v4().toString(),
-        value: priceMap[asset.onChainAddress] || '0',
+        value: priceMap[asset.onChainAddress.toLowerCase()],
         symbol: asset.symbol,
         providerSlug: this.providerSlug,
         priceQuoteType: 'crypto',
-        contractAddress: this.aaveContract.contractAddress,
+        contractAddress: asset.onChainAddress,
       })
     })
   }
