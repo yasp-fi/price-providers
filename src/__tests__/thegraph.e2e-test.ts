@@ -3,9 +3,7 @@ import { TheGraphProvider } from '../providers/thegraph'
 
 jest.setTimeout(5000000)
 
-const theGraph = new TheGraphProvider({
-  assetsSupported: []
-})
+const theGraph = new TheGraphProvider()
 
 describe('chainlink e2e testing', () => {
   test('fetchUniswapQuotes', async () => {

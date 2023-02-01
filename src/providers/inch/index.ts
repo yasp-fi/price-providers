@@ -7,43 +7,46 @@ import {
   SupportedChains,
 } from '@yasp/models'
 import { PriceProvider } from '../../core/provider'
-import { Aave } from '@yasp/evm-lib'
+import { InchOracle, InchQuoteParams } from '@yasp/evm-lib'
 import { v4 } from 'uuid'
 
-export type AaveProviderProps = {
+export type InchProviderProps = {
   chain: SupportedChains
   assetsSupported: Asset[]
 }
 
-export class AaveProvider implements PriceProvider {
-  chainId: ChainIds
+export class InchProvider implements PriceProvider {
   chain: SupportedChains
+  chainId: ChainIds
   providerSlug: ProviderSlug
-  aaveContract: Aave
-  assetsSupported: Asset[] = []
+  inchContract: InchOracle
+  assetsSupported: Asset[]
 
-  constructor(props: AaveProviderProps) {
+  constructor(props: InchProviderProps) {
     this.chain = props.chain
     this.chainId = Chain.mapNativeSymbolToId(props.chain)
-    this.providerSlug = `aave-${this.chain}` as ProviderSlug
-    this.aaveContract = new Aave(this.chainId)
+    this.providerSlug = `1inch-${this.chain}` as ProviderSlug
+    this.inchContract = new InchOracle(this.chainId)
     this.assetsSupported = props.assetsSupported
   }
 
   async forAllQuotes(): Promise<PriceQuote[]> {
-    const reserveData = await this.aaveContract.getReserveAssets()
-    const reserveAssets = reserveData.map((r) => r.address.toLowerCase())
-    const priceMap = Object.fromEntries(
-      reserveData.map((i) => [i.address.toLowerCase(), i.price.toFixed(8)])
+    const usdcAsset = this.assetsSupported.find((asset) => {
+      return asset.symbol === 'USDC'
+    })
+    if (!usdcAsset) {
+      throw new Error('USDC asset is not included to supported asset list')
+    }
+    const quotePayloads: InchQuoteParams[] = this.assetsSupported.map(
+      (asset) => ({ fromAsset: asset, toAsset: usdcAsset })
     )
 
-    const supportedAssets = this.assetsSupported.filter((asset) =>
-      reserveAssets.includes(asset.onChainAddress.toLowerCase())
-    )
-    return supportedAssets.map((asset) => {
+    const prices = await this.inchContract.getDEXQuotes(quotePayloads)
+
+    return this.assetsSupported.map((asset, i) => {
       return new PriceQuote({
         id: v4().toString(),
-        value: priceMap[asset.onChainAddress.toLowerCase()],
+        value: prices[i].toExact(),
         symbol: asset.symbol,
         providerSlug: this.providerSlug,
         priceQuoteType: 'crypto',

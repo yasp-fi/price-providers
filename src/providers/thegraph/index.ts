@@ -9,10 +9,6 @@ import { v4 } from 'uuid'
 import { AssetAmount } from '@yasp/asset-amount'
 import ms from 'ms'
 
-export type TheGraphProviderProps = {
-  assetsSupported: Asset[]
-}
-
 export class TheGraphProvider implements PriceProvider {
   chain = SupportedChains.Ethereum
   providerSlug = `thegraph-ETH` as ProviderSlug
@@ -21,8 +17,8 @@ export class TheGraphProvider implements PriceProvider {
   cacheTTL = ms('15s')
   lastUpdateAt = 0
 
-  constructor(props: TheGraphProviderProps) {
-    this.assetsSupported = props.assetsSupported
+  constructor() {
+    this.assetsSupported = []
   }
 
   get requester() {

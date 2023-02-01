@@ -4,8 +4,8 @@ import { ChainlinkProvider } from '../providers/chainlink'
 jest.setTimeout(5000000)
 
 const chainlink = new ChainlinkProvider({
-	chainId: ChainIds.OPTIMISM,
-	chain: SupportedChains.Optimism
+  chainId: ChainIds.OPTIMISM,
+  chain: SupportedChains.Optimism,
 })
 
 describe('chainlink e2e testing', () => {
@@ -17,5 +17,5 @@ describe('chainlink e2e testing', () => {
   test('forPricesBySymbols', async () => {
     const quotes = await chainlink.forPricesBySymbols(['BTC', 'ETH', 'DAI'])
     console.info(quotes)
-	})
+  })
 })
