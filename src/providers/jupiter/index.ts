@@ -4,7 +4,7 @@ import {
   PriceQuote,
   PriceQuoteProperties,
   ProviderSlug,
-  SupportedChains,
+  ChainNativeSymbols,
 } from '@yasp/models'
 import { createSafeWretch } from '@yasp/requests'
 import { JUPITER_PRICE_API_URL } from './constants'
@@ -25,12 +25,12 @@ import {
 import { isErrorResponseJupiter, isPriceResponseData } from './utils'
 
 export type JupiterProviderProps = {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupported: Asset[]
 }
 
 export class JupiterProvider implements PriceProvider {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupported: Asset[]
   providerSlug: ProviderSlug
 

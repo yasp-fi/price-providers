@@ -4,19 +4,19 @@ import {
   ChainIds,
   PriceQuote,
   ProviderSlug,
-  SupportedChains,
+  ChainNativeSymbols,
 } from '@yasp/models'
 import { PriceProvider } from '../../core/provider'
 import { InchOracle, InchQuoteParams } from '@yasp/evm-lib'
 import { v4 } from 'uuid'
 
 export type InchProviderProps = {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupported: Asset[]
 }
 
 export class InchProvider implements PriceProvider {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   chainId: ChainIds
   providerSlug: ProviderSlug
   inchContract: InchOracle

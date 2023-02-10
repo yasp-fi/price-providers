@@ -1,10 +1,10 @@
-import { Asset, PriceQuote, SupportedChains } from '@yasp/models'
+import { Asset, PriceQuote, ChainNativeSymbols } from '@yasp/models'
 import { solAssets } from './fixtures/assets'
 import { JupiterProvider } from '../providers/jupiter'
 import solAssetsAddresses from './fixtures/sol-assets-addresses.json'
 
 type JupiterTestCase = {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupportedByChain: Asset[]
   address: string
   symbol: string
@@ -15,7 +15,7 @@ jest.setTimeout(5000000)
 
 const jupiterTestCases: JupiterTestCase[] = [
   {
-    chain: SupportedChains.Solana,
+    chain: ChainNativeSymbols.Solana,
     assetsSupportedByChain: solAssets,
     address: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
     symbol: 'SOL',
@@ -26,7 +26,7 @@ const jupiterTestCases: JupiterTestCase[] = [
 describe('jupiter e2e testing', () => {
   test('big assets loading', async () => {
     const ctxJupiter = new JupiterProvider({
-      chain: SupportedChains.Solana,
+      chain: ChainNativeSymbols.Solana,
       assetsSupported: solAssets,
     })
 

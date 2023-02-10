@@ -1,11 +1,11 @@
-import { ChainIds, SupportedChains } from '@yasp/models'
+import { ChainIds, ChainNativeSymbols } from '@yasp/models'
 import { ChainlinkProvider } from '../providers/chainlink'
 
 jest.setTimeout(5000000)
 
 const chainlink = new ChainlinkProvider({
   chainId: ChainIds.OPTIMISM,
-  chain: SupportedChains.Optimism,
+  chain: ChainNativeSymbols.Optimism,
 })
 
 describe('chainlink e2e testing', () => {

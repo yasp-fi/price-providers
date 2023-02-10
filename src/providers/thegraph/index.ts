@@ -1,4 +1,4 @@
-import { Asset, PriceQuote, ProviderSlug, SupportedChains } from '@yasp/models'
+import { Asset, PriceQuote, ProviderSlug, ChainNativeSymbols } from '@yasp/models'
 import { createSafeWretch } from '@yasp/requests'
 
 import { UniswapTokenQueryResponse } from './types'
@@ -10,7 +10,7 @@ import { AssetAmount } from '@yasp/asset-amount'
 import ms from 'ms'
 
 export class TheGraphProvider implements PriceProvider {
-  chain = SupportedChains.Ethereum
+  chain = ChainNativeSymbols.Ethereum
   providerSlug = `thegraph-ETH` as ProviderSlug
   cachedQuotes: PriceQuote[] = []
   assetsSupported: Asset[]

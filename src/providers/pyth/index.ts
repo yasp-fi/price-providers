@@ -3,7 +3,7 @@ import {
   PriceQuote,
   ProviderSlug,
   QuoteNotFoundError,
-  SupportedChains,
+  ChainNativeSymbols,
 } from '@yasp/models'
 import { createSafeWretch } from '@yasp/requests'
 import ms from 'ms'
@@ -23,12 +23,12 @@ import {
 } from '../../core/promise'
 
 export type PythProviderProps = {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupported: Asset[]
 }
 
 export class PythProvider implements PriceProvider {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupported: Asset[]
   pythContractAddress: string
   providerSlug: ProviderSlug

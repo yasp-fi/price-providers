@@ -3,7 +3,7 @@ import {
   ChainIds,
   PriceQuote,
   ProviderSlug,
-  SupportedChains,
+  ChainNativeSymbols,
 } from '@yasp/models'
 import ms from 'ms'
 import { CHAINLINK_FEEDS_BY_CHAIN } from './constants'
@@ -14,13 +14,13 @@ import { convertChainlinkQuoteToPriceQuote } from './utils'
 
 export type ChainlinkProviderProps = {
   chainId: ChainIds
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   quoteSymbol?: string
 }
 
 export class ChainlinkProvider implements PriceProvider {
   chainId: ChainIds
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   providerSlug: ProviderSlug
   priceFeeds: ChainlinkDataFeed[]
   chainlinkContract: Chainlink

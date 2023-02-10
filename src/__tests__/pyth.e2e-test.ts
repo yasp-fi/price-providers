@@ -1,9 +1,9 @@
 import { PythProvider } from '../providers/pyth'
 import { bscAssets } from './fixtures/assets'
-import { Asset, PriceQuote, SupportedChains } from '@yasp/models'
+import { Asset, PriceQuote, ChainNativeSymbols } from '@yasp/models'
 
 type PythTestCase = {
-  chain: SupportedChains
+  chain: ChainNativeSymbols
   assetsSupportedByChain: Asset[]
   address: string
   addressList: string[]
@@ -13,7 +13,7 @@ type PythTestCase = {
 
 const pythTestCases: PythTestCase[] = [
   {
-    chain: SupportedChains.BinanceSmartChain,
+    chain: ChainNativeSymbols.BinanceSmartChain,
     assetsSupportedByChain: bscAssets,
     address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
     addressList: [

@@ -1,11 +1,11 @@
-import { ChainIds, SupportedChains } from '@yasp/models'
+import { ChainIds, ChainNativeSymbols } from '@yasp/models'
 import { InchProvider } from '../providers/inch'
 import { bscAssets } from './fixtures/assets'
 
 jest.setTimeout(5000000)
 
 const inch = new InchProvider({
-  chain: SupportedChains.BinanceSmartChain,
+  chain: ChainNativeSymbols.BinanceSmartChain,
   assetsSupported: bscAssets,
 })
 
