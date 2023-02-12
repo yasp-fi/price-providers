@@ -19,4 +19,6 @@ export const CHAINLINK_FEEDS_BY_CHAIN: Record<ChainIds, ChainlinkDataFeed[]> = {
   [ChainIds.MATIC]: [],
   [ChainIds.SOLANA]: [],
   [ChainIds.ZK_SYNC]: [],
+  [ChainIds.APTOS]: [],
+  [ChainIds.TRON]: [],
 }
