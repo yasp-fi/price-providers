@@ -71,7 +71,7 @@ export class PythProvider implements PriceProvider {
     const value = parseInt(notFormattedPrice) / 10 ** Math.abs(expo)
     const asset = this._symbolToAsset(priceFeed.assetSymbol)
     const symbol = asset?.symbol ?? priceFeed.assetSymbol
-    const contractAddress = asset?.onChainAddress
+    const contractAddress = asset ? Asset.onChainAddress(asset, this.chain) : undefined
 
     return new PriceQuote({
       id: v4().toString(),
@@ -192,10 +192,9 @@ export class PythProvider implements PriceProvider {
 
   forAllQuotes(): Promise<PriceQuote[]> {
     return this.forPricesByAddressList(
-      this.assetsSupported.map(asset => asset.onChainAddress)
+      this.assetsSupported.map((asset) => Asset.onChainAddress(asset, this.chain))
     )
   }
-
 
   async forPriceBySymbol(tickerSymbol: string): Promise<PriceQuote> {
     const priceQuotes = await this._getAllQuotesPromiseLimited()

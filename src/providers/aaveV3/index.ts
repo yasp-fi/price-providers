@@ -38,16 +38,16 @@ export class AaveProvider implements PriceProvider {
     )
 
     const supportedAssets = this.assetsSupported.filter((asset) =>
-      reserveAssets.includes(asset.onChainAddress.toLowerCase())
+      reserveAssets.includes(Asset.onChainAddress(asset, this.chain))
     )
     return supportedAssets.map((asset) => {
       return new PriceQuote({
         id: v4().toString(),
-        value: priceMap[asset.onChainAddress.toLowerCase()],
+        value: priceMap[Asset.onChainAddress(asset, this.chain)],
         symbol: asset.symbol,
         providerSlug: this.providerSlug,
         priceQuoteType: 'crypto',
-        contractAddress: asset.onChainAddress,
+        contractAddress: Asset.onChainAddress(asset, this.chain),
       })
     })
   }

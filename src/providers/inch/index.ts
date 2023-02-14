@@ -50,7 +50,7 @@ export class InchProvider implements PriceProvider {
         symbol: asset.symbol,
         providerSlug: this.providerSlug,
         priceQuoteType: 'crypto',
-        contractAddress: asset.onChainAddress,
+        contractAddress: Asset.onChainAddress(asset, this.chain),
       })
     })
   }
