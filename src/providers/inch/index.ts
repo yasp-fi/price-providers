@@ -25,7 +25,7 @@ export class InchProvider implements PriceProvider {
   constructor(props: InchProviderProps) {
     this.chain = props.chain
     this.chainId = Chain.mapNativeSymbolToId(props.chain)
-    this.providerSlug = `1inch-${this.chain}` as ProviderSlug
+    this.providerSlug = `1inch-network`
     this.inchContract = new InchOracle(this.chainId)
     this.assetsSupported = props.assetsSupported
   }

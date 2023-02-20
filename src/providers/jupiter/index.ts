@@ -36,7 +36,7 @@ export class JupiterProvider implements PriceProvider {
 
   constructor(props: JupiterProviderProps) {
     this.chain = props.chain
-    this.providerSlug = `jupiter-${this.chain}` as ProviderSlug
+    this.providerSlug = `jupiter`
     this.assetsSupported = props.assetsSupported
   }
 

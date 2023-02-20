@@ -11,7 +11,7 @@ import ms from 'ms'
 
 export class TheGraphProvider implements PriceProvider {
   chain = ChainNativeSymbols.Ethereum
-  providerSlug = `thegraph-ETH` as ProviderSlug
+  providerSlug = `thegraph` as ProviderSlug
   cachedQuotes: PriceQuote[] = []
   assetsSupported: Asset[]
   cacheTTL = ms('15s')
@@ -36,11 +36,10 @@ export class TheGraphProvider implements PriceProvider {
     }
     const { tokens, bundle } = data
     const ethToUsd = new AssetAmount(18, bundle.ethPriceUSD)
-    const slippage = new AssetAmount(18, '0.99')
 
     return tokens.map((token) => {
       const derivedETH = new AssetAmount(18, token.derivedETH)
-      const price = derivedETH.mul(ethToUsd).mul(slippage).toFixed(6)
+      const price = derivedETH.mul(ethToUsd).muln(0.99).toFixed(6)
 
       return new PriceQuote({
         id: v4().toString(),

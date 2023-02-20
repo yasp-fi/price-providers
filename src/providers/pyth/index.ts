@@ -38,7 +38,7 @@ export class PythProvider implements PriceProvider {
 
   constructor(props: PythProviderProps) {
     this.chain = props.chain
-    this.providerSlug = `pyth-${this.chain}` as ProviderSlug
+    this.providerSlug = `pyth`
     this.assetsSupported = props.assetsSupported
     this.pythContractAddress = PYTH_ADDRESSES_BY_CHAIN[this.chain]
   }

@@ -25,7 +25,7 @@ export class AaveProvider implements PriceProvider {
   constructor(props: AaveProviderProps) {
     this.chain = props.chain
     this.chainId = Chain.mapNativeSymbolToId(props.chain)
-    this.providerSlug = `aave-${this.chain}` as ProviderSlug
+    this.providerSlug = `aave-v3`
     this.aaveContract = new Aave(this.chainId)
     this.assetsSupported = props.assetsSupported
   }

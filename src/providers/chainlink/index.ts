@@ -34,7 +34,7 @@ export class ChainlinkProvider implements PriceProvider {
   constructor(props: ChainlinkProviderProps) {
     this.chainId = props.chainId
     this.chain = props.chain
-    this.providerSlug = `chainlink-${this.chain}` as ProviderSlug
+    this.providerSlug = `chainlink`
     this.priceFeeds = CHAINLINK_FEEDS_BY_CHAIN[this.chainId]
     this.chainlinkContract = new Chainlink(props.chainId)
     this.quoteSymbol = props.quoteSymbol || 'USD'
