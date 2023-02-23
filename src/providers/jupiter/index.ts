@@ -65,7 +65,9 @@ export class JupiterProvider implements PriceProvider {
 
   forAllQuotes(): Promise<PriceQuote[]> {
     return this.forPricesByAddressList(
-      this.assetsSupported.map(asset => Asset.onChainAddress(asset, this.chain))
+      this.assetsSupported.map((asset) =>
+        Asset.onChainAddress(asset, this.chain)
+      )
     )
   }
 
