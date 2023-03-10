@@ -1,5 +1,5 @@
 {
-	"extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "experimentalDecorators": true,
     "allowJs": true,
@@ -22,7 +22,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2021",
+    "target": "es2021"
   },
   "include": [
     "src/**/*"
