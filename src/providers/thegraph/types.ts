@@ -1,7 +1,7 @@
 import { PriceQuoteType } from '@yasp/models'
 
 export type UniswapToken = {
-	id: string
+  id: string
   symbol: string
   decimals: string
   derivedETH: string

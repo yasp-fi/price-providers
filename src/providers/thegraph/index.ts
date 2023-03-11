@@ -1,4 +1,9 @@
-import { Asset, PriceQuote, ProviderSlug, ChainNativeSymbols } from '@yasp/models'
+import {
+  Asset,
+  PriceQuote,
+  ProviderSlug,
+  ChainNativeSymbols,
+} from '@yasp/models'
 import { createSafeWretch } from '@yasp/requests'
 
 import { UniswapTokenQueryResponse } from './types'
